@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     'Carbon:faceCool': typeof import('~icons/carbon/face-cool')['default']
     CarbonApi: typeof import('~icons/carbon/api')['default']
     CarbonArea: typeof import('~icons/carbon/area')['default']
+    CarbonBee: typeof import('~icons/carbon/bee')['default']
     CarbonCharacterLowerCase: typeof import('~icons/carbon/character-lower-case')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']

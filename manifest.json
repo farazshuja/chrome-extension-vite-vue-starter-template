@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "CRXJS Vue Vite Example",
+    "version": "1.0.0",
+    "action": { "default_popup": "src/popup/index.html" },
+    "permissions": ["storage"],
+    "icons": {
+        "16": "src/assets/bee16.png",
+        "32": "src/assets/bee32.png",
+        "48": "src/assets/bee48.png",
+        "128": "src/assets/bee128.png"
+    }
+  }

@@ -8,6 +8,8 @@ import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
 import AutoImport from 'unplugin-auto-import/vite';
 import WindiCSS from 'vite-plugin-windicss';
+import { crx } from '@crxjs/vite-plugin';
+import manifest from './manifest.json';
 import windiConfig from './windi.config';
 
 // export const r = (...args: string[]) => fileURLToPath(new URL('./src', import.meta.url);
@@ -16,7 +18,7 @@ import windiConfig from './windi.config';
 export default defineConfig({
   plugins: [
     vue(),
-
+    crx({ manifest }),
     AutoImport({
       imports: [
         'vue',
