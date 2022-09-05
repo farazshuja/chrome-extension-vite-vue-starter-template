@@ -17,7 +17,6 @@ const storageLocal: StorageLikeAsync = {
   },
 
   async getItem(key: string) {
-    debugger;
     return (await storage.local.get(key))[key];
   },
 };
@@ -25,5 +24,5 @@ const storageLocal: StorageLikeAsync = {
 export const useStorageLocal = <T>(
   key: string,
   initialValue: MaybeRef<T>,
-  options?: UseStorageAsyncOptions<T>
+  options?: UseStorageAsyncOptions<T>,
 ): RemovableRef<T> => useStorageAsync(key, initialValue, storageLocal, options);

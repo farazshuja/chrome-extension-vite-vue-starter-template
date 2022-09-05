@@ -11,9 +11,6 @@ module.exports = {
   ],
   rules: {
     'vue/multi-word-component-names': 'off',
-  },
-  parserOptions: {
-    ecmaVersion: 'latest',
     'prettier/prettier': [
       'error',
       {
@@ -26,5 +23,8 @@ module.exports = {
         eslintIntegration: true,
       },
     ],
+  },
+  parserOptions: {
+    ecmaVersion: 'latest',
   },
 };
