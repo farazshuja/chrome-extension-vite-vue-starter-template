@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.1.1",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "webext-bridge": "^5.0.5"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^1.0.14",
@@ -22,7 +23,7 @@
     "@types/jsdom": "^20.0.0",
     "@types/node": "^16.11.47",
     "@types/webextension-polyfill": "^0.9.0",
-    "@vitejs/plugin-vue": "^3.0.1",
+    "@vitejs/plugin-vue": "^2.3.2",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vue/test-utils": "^2.0.2",
@@ -36,7 +37,7 @@
     "unplugin-auto-import": "^0.11.2",
     "unplugin-icons": "^0.14.8",
     "unplugin-vue-components": "^0.22.4",
-    "vite": "^3.0.4",
+    "vite": "^2.9.15",
     "vite-plugin-windicss": "^1.8.7",
     "vitest": "^0.21.0",
     "vue-tsc": "^0.39.5",
