@@ -5,6 +5,7 @@ export default defineConfig({
   darkMode: 'class',
   // https://windicss.org/posts/v30.html#attributify-mode
   attributify: true,
+  prefix: 'cx-',
   extract: {
     include: [resolve(__dirname, 'src/**/*.{vue,html}')],
   },
@@ -44,6 +45,7 @@ export default defineConfig({
         xs: '10px',
         sm: '12px',
         md: '14px',
+        lg: '16px',
       },
     },
   },

@@ -6,30 +6,22 @@ const [show, toggle] = useToggle(false);
 
 <template>
   <div
-    class="root-app fixed right-0 bottom-0 m-5 z-100 flex font-sans select-none leading-1em"
+    class="root-app cx-fixed cx-right-0 cx-bottom-0 cx-m-5 cx-z-100 cx-flex cx-font-sans cx-select-none cx-leading-1em"
   >
-    <h1 class="test">Test</h1>
     <div
-      class="bg-white text-green-300 rounded-full shadow w-max h-min"
-      p="x-4 y-2"
-      m="y-auto r-2"
-      transition="opacity duration-300"
-      :class="show ? 'opacity-100' : 'opacity-0'"
+      class="cx-bg-white cx-rounded-full cx-shadow cx-w-max cx-h-min"
+      p="cx-x-4 cx-y-2"
+      m="cx-y-auto cx-r-2"
+      transition="cx-opacity cx-duration-300"
+      :class="show ? 'cx-opacity-100' : 'cx-opacity-0'"
     >
-      Vitesse WebExt23
+      Vitesse WebExt
     </div>
     <div
-      class="flex w-10 h-10 rounded-full shadow cursor-pointer"
-      bg="teal-600 hover:teal-700"
+      class="cx-flex cx-w-10 cx-h-10 cx-rounded-full cx-shadow cx-cursor-pointer cx-bg-white-20 hover:cx-bg-gray-100"
       @click="toggle()"
     >
-      <pixelarticons-power class="block m-auto text-white text-lg" />
+      <carbon-bee class="cx-block cx-m-auto cx-text-red-20 cx-text-lg" />
     </div>
   </div>
 </template>
-
-<style>
-h1.test {
-  color: purple !important;
-}
-</style>

@@ -8,16 +8,16 @@ function openOptionsPage() {
 </script>
 
 <template>
-  <main class="w-[300px] px-4 py-5 text-center text-gray-700">
-    <carbon-bee class="text-red-20 text-6xl m-auto" />
-    <p class="mt-2 opacity-50">This is the popup page</p>
+  <main class="cx-w-[300px] cx-px-4 cx-py-5 cx-text-center cx-text-gray-700">
+    <carbon-bee class="cx-text-red-20 cx-text-6xl cx-m-auto" />
+    <p class="cx-mt-2 cx-opacity-50">This is the popup page</p>
     <button
-      class="btn mt-2 bg-blue-300 px-4 py-1 rounded-md hover:bg-blue-400"
+      class="cx-btn cx-mt-2 cx-bg-blue-300 cx-px-4 cx-py-1 cx-rounded-md hover:cx-bg-blue-400"
       @click="openOptionsPage"
     >
       Open Options
     </button>
-    <div class="mt-2">
+    <div class="cx-mt-2">
       <span class="opacity-50">Storage:</span> {{ storageDemo }}
     </div>
   </main>
