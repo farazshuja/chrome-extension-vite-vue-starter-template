@@ -3,6 +3,10 @@
     "name": "CRXJS Vue Vite Example",
     "version": "1.0.0",
     "action": { "default_popup": "src/popup/index.html" },
+    "background": {
+        "service_worker": "src/background/main.ts",
+        "type": "module"
+    },
     "content_scripts": [
         {
           "js": ["src/contentScripts/index.ts"],
