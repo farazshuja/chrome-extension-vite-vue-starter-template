@@ -15,7 +15,17 @@ The project was generated via `npm init vue@3` for typescript and then added
 - 📦 [Components auto importing](./src/components)
 - 🌟 [Icons](./src/components) - Access to icons from any iconset directly
 
-## Type Support for `.vue` Imports in TS
+## Extension
+
+### Popup
+![](./docs/2022-09-22-08-59-54.png)
+
+### Options
+![](./docs/2022-09-22-09-01-40.png)
+
+### Content Script
+Inject into bottom-right of the page  
+![](./docs/2022-09-22-09-02-44.png)
 
 TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 

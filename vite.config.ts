@@ -58,6 +58,7 @@ export default defineConfig({
       apply: 'serve',
       transform(src, id) {
         if (/\.(css).*$/.test(id)) {
+          console.log(src);
           const fn =
             "import { updateStyle, removeStyle } from '/src/contentScripts/utils.ts';\n";
           let updatedSrc = fn + src;

@@ -10,16 +10,19 @@ export function updateStyle(id: string, content: string) {
       style = document.createElement('style');
       style.setAttribute('type', 'text/css');
       style.innerHTML = content;
-      // document.head.appendChild(style);
-      const root = document.getElementById('crxjs-ext');
+      if (window.location.href.includes('chrome-extension://')) {
+        document.head.appendChild(style);
+      } else {
+        const root = document.getElementById('crxjs-ext');
 
-      // if no root try again in a second
-      if (!root) {
-        setTimeout(() => updateStyle(id, content), 1000);
-        return;
+        // if no root try again in a second
+        if (!root) {
+          setTimeout(() => updateStyle(id, content), 1000);
+          return;
+        }
+        const shadowEl = root?.shadowRoot;
+        shadowEl?.appendChild(style);
       }
-      const shadowEl = root?.shadowRoot;
-      shadowEl?.appendChild(style);
     } else {
       style.innerHTML = content;
     }
@@ -28,19 +31,28 @@ export function updateStyle(id: string, content: string) {
 }
 
 export function removeStyle(id: string) {
-  debugger;
   const style = sheetsMap.get(id);
   if (style) {
-    const root = document.getElementById('crxjs-ext');
-    const shadowEl = root?.shadowRoot;
-    if (style instanceof CSSStyleSheet) {
-      if (shadowEl) {
-        shadowEl.adoptedStyleSheets = shadowEl.adoptedStyleSheets.filter(
+    if (window.location.href.includes('chrome-extension://')) {
+      if (style instanceof CSSStyleSheet) {
+        document.adoptedStyleSheets = document.adoptedStyleSheets.filter(
           (s) => s !== style,
         );
+      } else {
+        document.head.removeChild(style);
       }
-    } else if (shadowEl) {
-      shadowEl.removeChild(style);
+    } else {
+      const root = document.getElementById('crxjs-ext');
+      const shadowEl = root?.shadowRoot;
+      if (style instanceof CSSStyleSheet) {
+        if (shadowEl) {
+          shadowEl.adoptedStyleSheets = shadowEl.adoptedStyleSheets.filter(
+            (s) => s !== style,
+          );
+        }
+      } else if (shadowEl) {
+        shadowEl.removeChild(style);
+      }
     }
     sheetsMap.delete(id);
   }
