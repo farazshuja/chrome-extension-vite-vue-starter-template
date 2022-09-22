@@ -16,6 +16,9 @@ import windiConfig from './windi.config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    cssCodeSplit: false,
+  },
   plugins: [
     vue(),
     crx({ manifest }),
@@ -49,6 +52,29 @@ export default defineConfig({
     WindiCSS({
       config: windiConfig,
     }),
+    {
+      name: 'merge-css-shadow-dom',
+      enforce: 'post',
+      apply: 'serve',
+      transform(src, id) {
+        if (/\.(css).*$/.test(id)) {
+          const fn =
+            "import { updateStyle, removeStyle } from '/src/contentScripts/utils.ts';\n";
+          let updatedSrc = fn + src;
+          updatedSrc = updatedSrc.replace(
+            '__vite__updateStyle(',
+            'updateStyle(',
+          );
+          updatedSrc = updatedSrc.replace(
+            '__vite__removeStyle(',
+            'removeStyle(',
+          );
+          return {
+            code: updatedSrc,
+          };
+        }
+      },
+    },
   ],
   resolve: {
     alias: {

@@ -18,10 +18,16 @@ const [show, toggle] = useToggle(false);
       Vitesse WebExt
     </div>
     <div
-      class="cx-flex cx-w-10 cx-h-10 cx-rounded-full cx-shadow cx-cursor-pointer cx-bg-white-20 hover:cx-bg-gray-100"
+      class="cx-flex cx-w-10 cx-h-10 cx-rounded-full cx-shadow cx-cursor-pointer cx-bg-white-20 hover:cx-bg-yellow-100"
       @click="toggle()"
     >
-      <carbon-bee class="cx-block cx-m-auto cx-text-red-20 cx-text-lg" />
+      <carbon-bee class="cx-block cx-m-auto cx-text-lg" />
     </div>
   </div>
 </template>
+
+<style>
+.root-app {
+  padding: 3px;
+}
+</style>

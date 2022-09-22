@@ -1,6 +1,7 @@
 # chrome-extension-vite-vue-starter-template
 
-This template should help get you started developing with Vue 3 in Vite.
+This template should help get you started developing chrome extension manifest v.3 with Vue 3 in Vite. It will inject
+vue component in shadow-dom, keeping the extension completely isolated so the css libs does not collide with the main app.
 
 ## Recommended IDE Setup
 
@@ -8,6 +9,8 @@ This template should help get you started developing with Vue 3 in Vite.
 
 ## Features
 The project was generated via `npm init vue@3` for typescript and then added
+- 🍀 [Crxjs](https://github.com/crxjs/chrome-extension-tools_) - modern developer experience to the Chrome Extension ecosystem
+- 🛵 [Webext Bridge](https://github.com/zikaari/webext-bridge) - Messaging in WebExtension made super easy. Out of the box.
 - 🍃 [Windi CSS](https://windicss.org/) - on-demand CSS utilities
 - 📦 [Components auto importing](./src/components)
 - 🌟 [Icons](./src/components) - Access to icons from any iconset directly
