@@ -35,19 +35,19 @@ export function removeStyle(id: string) {
   if (style) {
     if (window.location.href.includes('chrome-extension://')) {
       if (style instanceof CSSStyleSheet) {
-        document.adoptedStyleSheets = document.adoptedStyleSheets.filter(
-          (s) => s !== style,
-        );
+        (document as any).adoptedStyleSheets = (
+          document as any
+        ).adoptedStyleSheets.filter((s: any) => s !== style);
       } else {
         document.head.removeChild(style);
       }
     } else {
       const root = document.getElementById('crxjs-ext');
-      const shadowEl = root?.shadowRoot;
+      const shadowEl: any = root?.shadowRoot;
       if (style instanceof CSSStyleSheet) {
         if (shadowEl) {
           shadowEl.adoptedStyleSheets = shadowEl.adoptedStyleSheets.filter(
-            (s) => s !== style,
+            (s: any) => s !== style,
           );
         }
       } else if (shadowEl) {

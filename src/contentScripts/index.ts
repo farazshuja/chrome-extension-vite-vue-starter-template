@@ -1,3 +1,4 @@
+import { createApp } from 'vue';
 /* eslint-disable no-console */
 import { onMessage } from 'webext-bridge';
 import 'virtual:windi.css';
@@ -21,6 +22,18 @@ import App from './views/App.vue';
 
   // Todo: open on dev / close for production
   const shadowDOM = container.attachShadow?.({ mode: 'open' }); //  || container;
+
+  if (!__DEV__) {
+    const styleEl = document.createElement('link');
+    styleEl.setAttribute('rel', 'stylesheet');
+    styleEl.setAttribute(
+      'href',
+      // eslint-disable-next-line
+      // @ts-ignore
+      browser.runtime.getURL('/assets/style.css'),
+    );
+    shadowDOM.appendChild(styleEl);
+  }
 
   shadowDOM.appendChild(root);
   document.body.appendChild(container);

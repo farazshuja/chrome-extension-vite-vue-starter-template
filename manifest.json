@@ -13,6 +13,13 @@
           "matches": ["https://*/*"]
         }
     ],
+    "web_accessible_resources": [
+        {
+          "resources": [ "assets/style.css" ],
+          "matches": ["https://*/*"],
+          "use_dynamic_url": true
+        }
+    ],
     "options_ui": {
         "page": "src/options/index.html",
         "open_in_tab": true

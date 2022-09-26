@@ -12,12 +12,20 @@ import { crx } from '@crxjs/vite-plugin';
 import manifest from './manifest.json';
 import windiConfig from './windi.config';
 
-// export const r = (...args: string[]) => fileURLToPath(new URL('./src', import.meta.url);
+export const isDev = process.env.NODE_ENV !== 'production';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
     cssCodeSplit: false,
+    rollupOptions: {
+      output: {
+        assetFileNames: `assets/[name].[ext]`,
+      },
+    },
+  },
+  define: {
+    __DEV__: isDev,
   },
   plugins: [
     vue(),
@@ -58,7 +66,6 @@ export default defineConfig({
       apply: 'serve',
       transform(src, id) {
         if (/\.(css).*$/.test(id)) {
-          console.log(src);
           const fn =
             "import { updateStyle, removeStyle } from '/src/contentScripts/utils.ts';\n";
           let updatedSrc = fn + src;
